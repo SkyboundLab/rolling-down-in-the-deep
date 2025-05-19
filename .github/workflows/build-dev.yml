@@ -38,5 +38,5 @@ jobs:
           title: "${{ env.NAME }}"
           automatic_release_tag: "latest"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "target/*.jar"
+          files: "build/libs/*.jar"
           prerelease: false
