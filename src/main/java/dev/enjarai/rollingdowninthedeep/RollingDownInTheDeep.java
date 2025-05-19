@@ -17,6 +17,7 @@ import nl.enjarai.doabarrelroll.config.ModConfig;
 import nl.enjarai.doabarrelroll.config.Sensitivity;
 import nl.enjarai.doabarrelroll.flight.RotationModifiers;
 import nl.enjarai.doabarrelroll.math.MagicNumbers;
+import net.minecraft.registry.tag.FluidTags;
 import org.joml.Matrix3d;
 import org.joml.Vector3d;
 import org.slf4j.Logger;
@@ -84,7 +85,7 @@ public class RollingDownInTheDeep implements ClientModInitializer {
     public static boolean shouldRoll() {
         var player = MinecraftClient.getInstance().player;
 
-        return enabled() && player != null && player.isSwimming() && player.isSubmergedInWater();
+        return enabled() && player != null && player.isSwimming() && player.isSubmergedIn(FluidTags.WATER);
     }
 
     public static boolean enabled() {
