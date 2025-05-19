@@ -11,7 +11,7 @@ import org.lwjgl.glfw.GLFW;
 public class SwimKeybindings {
     public static final KeyBinding TOGGLE_ENABLED = new KeyBinding(
             "key.rolling_down_in_the_deep.toggle_enabled",
-            GLFW.GLFW_KEY_O,
+            InputUtil.UNKNOWN_KEY.getCode(),
             "category.rolling_down_in_the_deep.rolling_down_in_the_deep"
     );
     public static final KeyBinding OPEN_CONFIG = new KeyBinding(
