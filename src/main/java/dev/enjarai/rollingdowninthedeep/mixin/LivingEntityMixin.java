@@ -35,10 +35,10 @@ public abstract class LivingEntityMixin {
         return (Object) this instanceof ClientPlayerEntity && RollingDownInTheDeep.shouldRoll() ? f : original;
     }
 
-    @SuppressWarnings("ConstantConditions")
     @WrapWithCondition(
         method = "tickMovement",
-        at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;swimUpward(Lnet/minecraft/registry/tag/TagKey;)V")
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;swimUpward(Lnet/minecraft/registry/tag/TagKey;)V"),
+        require = 0
     )
     /// Cancel the upwards velocity added by holding jump
     private boolean rollingDownInTheDeep$cancelUpwardsSwim(LivingEntity instance, TagKey<Fluid> fluid) {

@@ -32,7 +32,8 @@ public abstract class ClientPlayerEntityMixin {
 
     @WrapWithCondition(
             method = "tickMovement",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;knockDownwards()V")
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;knockDownwards()V"),
+            require = 0
     )
     /// Cancel the downwards velocity added by holding sneak
     private boolean rollingDownInTheDeep$cancelDownwardsSwim(ClientPlayerEntity instance) {
